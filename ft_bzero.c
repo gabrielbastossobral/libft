@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:34:54 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/08 15:46:22 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:09:20 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		p[count] = 0;
 		count++;
 	}
-	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:12:39 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/16 16:19:05 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/17 13:09:24 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (fd < 0)
+	if (!s || fd < 0)
 		return ;
 	while (*s)
 	{

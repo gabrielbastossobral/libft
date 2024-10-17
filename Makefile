@@ -6,7 +6,7 @@
 #    By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 09:54:20 by gabastos          #+#    #+#              #
-#    Updated: 2024/10/16 16:14:50 by gabastos         ###   ########.fr        #
+#    Updated: 2024/10/17 15:27:02 by gabastos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,8 @@ SRC = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
 
@@ -59,7 +61,7 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) indexed"
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+	@cc $(FLAG) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)

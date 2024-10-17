@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:12:32 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/16 16:16:30 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/17 09:14:21 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);
-void				ft_putendl_fd(char const *s, int fd);
+void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *s);

@@ -6,7 +6,7 @@
 #    By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 09:54:20 by gabastos          #+#    #+#              #
-#    Updated: 2024/10/17 15:27:02 by gabastos         ###   ########.fr        #
+#    Updated: 2024/10/21 13:53:25 by gabastos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,15 @@ SRC = ft_atoi.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
 
+SRC_B = ft_lstnew_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c \
+
 
 OBJ = $(SRC:.c=.o)
+
+OBJ_B = $(SRC_B:.c=.o)
 
 all: $(NAME)
 
@@ -60,11 +67,14 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "$(NAME) indexed"
 
+bonus: $(OBJ_B)
+	@ar rc $(NAME) $(OBJ_B)
+
 %.o: %.c
 	@cc $(FLAG) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(OBJ_B)
 	@echo "OBJ deleted"
 
 fclean: clean
@@ -73,4 +83,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: bonus, all, clean, fclean, re

@@ -6,7 +6,7 @@
 #    By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 09:54:20 by gabastos          #+#    #+#              #
-#    Updated: 2024/10/21 13:53:25 by gabastos         ###   ########.fr        #
+#    Updated: 2024/10/22 09:18:45 by gabastos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,15 @@ SRC = ft_atoi.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
 
-SRC_B = ft_lstnew_bonus.c \
-		ft_lstadd_front_bonus.c \
-		ft_lstsize_bonus.c \
-		ft_lstlast_bonus.c \
+SRC_B = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 
 OBJ = $(SRC:.c=.o)

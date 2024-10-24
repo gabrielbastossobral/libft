@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:32:40 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/15 09:51:45 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:45:40 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t num, size_t size)
 	char	*ptr;
 	size_t	i;
 
+	if (num != 0 && size > SIZE_MAX / num)
+		return (NULL);
 	memory = malloc(num * size);
 	ptr = (char *)memory;
 	i = 0;

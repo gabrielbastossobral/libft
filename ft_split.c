@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:11:35 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/24 11:26:51 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:38:07 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	int		index;
 	char	**split;
+	size_t	size;
 
 	split = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !split)
@@ -57,11 +58,12 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	index = -1;
-	while (i <= ft_strlen(s))
+	size = ft_strlen(s);
+	while (i <= size)
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		else if ((s[i] == c || i == size) && index >= 0)
 		{
 			split[j++] = word_dup(s, index, i);
 			index = -1;

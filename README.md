@@ -1,94 +1,75 @@
-# :books: Libft | 42 SP
-- Actual Status : finished.
-- Result        : Result : Approved with 125 points by moulinette (the 42 tester) ✅
+# Libft Introduction
 
-The libft (42 Library) is the first project in the software engineering curriculum at 42 São Paulo. The objective of the project is to create your first C library by re-creating functions from the standard C library. During the project, you will learn how these functions work, how to implement them, and how to use each one. To submit the project, you must create a Makefile that compiles your library without relinking.
+Libft (Library of Functions)
 
-Upon completing the mandatory part of the project, you are encouraged to do the bonus part, which involves learning about linked lists, how to create them, and how to manipulate them.
+In this project, you will be creating a library of functions, the file structure for this project is the following:
 
-## 📝 Functions
+### .c Files 
+Where all of your functions will be written in. 
 
-| Function | Description |
-| :------: | :---------: |
-| ``ft_atoi`` | Converts the initial portion of the string pointed to by ``nptr`` to int. |
-| ``ft_bzero`` | Sets the first ``n`` chars of a string ``s`` to zero ``\0``. |
-| ``ft_calloc`` | Allocates memory for an array of 'nmemb' elements of 'size' bytes, and set to zero. |
-| ``ft_isalnum`` | Returns ``1`` if the input is a alphanumeric character from the ``ASCII`` table. |
-| ``ft_isalpha`` | Returns ``1`` if the input is a alphabetical character from the ``ASCII`` table. |
-| ``ft_isascii`` | Returns ``1`` if the input is in the ``ASCII`` table. |
-| ``ft_isdigit`` | Returns ``1`` if the input is a digit character from the ``ASCII`` table. |
-| ``ft_isprint`` | Returns ``1`` if the input is a printable character from the ``ASCII`` table. |
-| ``ft_itoa`` | Allocates with malloc and returns a string representing the integer received as an argument, negative numbers must be handled. |
-| ``ft_memccpy`` | Copies from one memory point to another, until the specified character is copied or until ``n`` bytes are copied. |
-| ``ft_memchr`` | Scans the initial ``n`` bytes of the memory area pointed to by ``s`` for the first instance of ``c``. |
-| ``ft_memcmp`` | Compares the first ``n`` bytes, each interpreted as unsigned char, of the memory areas ``s1`` and ``s2``. |
-| ``ft_memcpy`` | Copies ``n`` bytes from memory area ``src`` to memory area ``dest``, the memory areas must not overlap. |
-| ``ft_memmove`` | Copies ``n`` bytes from memory area ``src`` to memory area ``dest``, cases of memory overlap must be handled. |
-| ``ft_memset`` | Fills the first ``n`` bytes of the memory area pointed to by ``s`` with the int ``c``. |
-| ``ft_putchar_fd`` | Outputs the character ``c`` to the given file descriptor. |
-| ``ft_putendl_fd`` | Outputs the string ``s`` to the given file descriptor followed by a newline. |
-| ``ft_putnbr_fd`` | Outputs the integer ``n`` to the given file descriptor. |
-| ``ft_putstr_fd`` | Outputs the string ``s`` to the given file descriptor. |
-| ``ft_split`` | Allocates with malloc and returns an array of strings obtained by splitting ``s`` using the character ``c`` as a delimiter. |
-| ``ft_strchr`` | Looks for the first occurrence of the character ``c`` in the string ``s``. |
-| ``ft_strdup`` | Allocates with malloc and duplicate the contents of string ``s``. |
-| ``ft_striteri`` | Applies the function ``f`` on each character of the string passed as argument. |
-| ``ft_strjoin`` | Allocates with malloc and returns a new string, which is the result of the concatenation of ``s1`` and ``s2``. |
-| ``ft_strlcat`` | Appends the NUL-terminated string ``src`` to the end of ``dst``. |
-| ``ft_strlcpy`` | Copies ``size - 1`` characters from the NUL-terminated string ``src`` to ``dst``, NUL-terminating the result. |
-| ``ft_strlen`` | Returns the length of the string, before the terminating null byte ``\0`` can be found. |
-| ``ft_strmapi`` | Create a new string with malloc resulting from successive applications of ``f``. |
-| ``ft_strncmp`` | Compares only the first (at most) n bytes of two strings, ``s1`` and ``s2``. |
-| ``ft_strnstr`` | Locates the first occurrence of the null-terminated string ``little`` in the string ``big``, where not more than ``len`` characters are searched. Characters that appear after a ``\0`` are not searched. |
-| ``ft_strrchr`` | Looks for the last occurrence of the character ``c`` in the string ``s``. |
-| ``ft_strtrim`` | Allocates with malloc and returns a copy of ``s1`` with the characters specified in ``set`` removed from the beginning and the end of the string. |
-| ``ft_substr`` | Allocates with malloc and returns a substring from the string ``s``. The substring begins at index ``start`` and is of maximum size ``len``. |
-| ``ft_tolower`` | Convert uppercase letters to lowercase. |
-| ``ft_toupper`` | Convert lowercase letters to uppercase. |
+### .h (Header)
+Your header file is useful for 2 things:
+- First, instead of doing for example `#include <unistd.h>` in all of your .c files, you just write it once in your header and all of your .c files will read it from your header file. 
+- Secondly, let's say one of your .c files uses another function from another .c file, well instead of writting that function above, just write `#include "libft.h"` and it will find it in your header file. 
 
-## :star: Bonus
-For this part we implemented a struct defining the well-known linked lists
-```C
-typedef	struct	s_list
-{
-	void		*content;
-	struct	s_list	*next;
-}			t_list;
-```
+Make sure you add `#include "libft.h"` in all of your .c files.
 
-Bonus functions to implement
+### Makefile 
+Makefile is where you will create a file to compile your projects. Remember how in the piscine, you created an **int main** and **cc** to compile the projects, well with a Makefile, you don't have to do that anymore, you just type `make` once you have created your Makefile. 
 
-| Bonus Function | Description |
-| :------------: | :---------: |
-| ``ft_lstnew`` | Allocates with malloc and returns a new node. |
-| ``ft_lstadd_front`` | Adds the node ``new`` at the beginning of the list. |
-| ``ft_lstsize`` | Counts the number of nodes in a list. |
-| ``ft_lstlast`` | Returns the last node of the list. |
-| ``ft_lstadd_back`` | Adds the node ``new`` at the end of the list. |
-| ``ft_lstdelone`` | Takes as a parameter a node and frees the memory of the node’s content. The memory of ``next`` must not be freed. |
-| ``ft_lstclear`` | Deletes and frees the given node and every successor of that node and set the pointer to the list with NULL. |
-| ``ft_lstiter`` | Iterates the list ``lst`` and applies the function ``f`` on the content of each node. |
-| ``ft_lstmap`` | Creates a new list resulting of the successive applications of the function ``f``. Use ``del`` if you need to delete the content. |
+# Libft Functions
 
-## 🛠️ Usage
+### Functions from `<ctype.h>`
 
-In order to use this static library in your project, you must download this repository into your pc and compile the library
+- [`ft_isalpha`](ft_isalpha.c)	- checks  for  an  alphabetic  character.
+- [`ft_isdigit`](ft_isdigit.c)	- checks for a digit (0 through 9).
+- [`ft_isalnum`](ft_isalnum.c)	- checks for an alphanumeric character.
+- [`ft_isascii`](ft_isascii.c)	- checks whether c fits into the ASCII character set.
+- [`ft_isprint`](ft_isprint.c)	- checks for any printable character.
+- [`ft_toupper`](ft_toupper.c)	- convert char to uppercase.
+- [`ft_tolower`](ft_tolower.c)	- convert char to lowercase.
 
-``` shell
-$> git clone https://github.com/gabrielbastossobral/libft.git
-$> cd libft
-$> make
-$> make bonus
-```
+### Functions from `<string.h>`
 
-In your code, simply include its header:
+- [`ft_memset`](ft_memset.c)	- fill memory with a constant byte.
+- [`ft_strlen`](ft_strlen.c)	- calculate the length of a string.
+- [`ft_bzero`](ft_bzero.c)	- zero a byte string.
+- [`ft_memcpy`](ft_memcpy.c)	- copy memory area.
+- [`ft_memmove`](ft_memmove.c)	- copy memory area.
+- [`ft_strlcpy`](ft_strlcpy.c)	- copy string to an specific size.
+- [`ft_strlcat`](ft_strlcat.c)	- concatenate string to an specific size.
+- [`ft_strchr`](ft_strchr.c)	- locate character in string.
+- [`ft_strrchr`](ft_strrchr.c)	- locate character in string.
+- [`ft_strncmp`](ft_strncmp.c)	- compare two strings.
+- [`ft_memchr`](ft_memchr.c)	- scan memory for a character.
+- [`ft_memcmp`](ft_memcmp.c)	- compare memory areas.
+- [`ft_strnstr`](ft_strnstr.c)	- locate a substring in a string.
+- [`ft_strdup`](ft_strdup.c)	- creates a dupplicate for the string passed as parameter.
 
-``` C
-#include "libft.h"
-```
+### Functions from `<stdlib.h>`
+- [`ft_atoi`](ft_atoi.c)	- convert a string to an integer.
+- [`ft_calloc`](ft_calloc.c)	- allocates memory and sets its bytes' values to 0.
 
-And, when compiling your code, add the required flags:
+### Non-standard functions
+- [`ft_substr`](ft_substr.c)	- returns a substring from a string.
+- [`ft_strjoin`](ft_strjoin.c)	- concatenates two strings.
+- [`ft_strtrim`](ft_strtrim.c)	- trims the beginning and end of string with specific set of chars.
+- [`ft_split`](ft_split.c)	- splits a string using a char as parameter.
+- [`ft_itoa`](ft_itoa.c)	- converts a number into a string.
+- [`ft_strmapi`](ft_strmapi.c)	- applies a function to each character of a string.
+- [`ft_striteri`](ft_striteri.c)	- applies a function to each character of a string.
+- [`ft_putchar_fd`](ft_putchar_fd.c)	- output a char to a file descriptor.
+- [`ft_putstr_fd`](ft_putstr_fd.c)	- output a string to a file descriptor.
+- [`ft_putendl_fd`](ft_putendl_fd.c)	- output a string to a file descriptor, followed by a new line.
+- [`ft_putnbr_fd`](ft_putnbr_fd.c)	- output a number to a file descriptor.
 
-``` shell
-$> -L ./libft -lft
-```
+### Linked list functions
+
+- [`ft_lstnew`](ft_lstnew.c)	- creates a new list element.
+- [`ft_lstadd_front`](ft_lstadd_front.c)	- adds an element at the beginning of a list.
+- [`ft_lstsize`](ft_lstsize.c)	- counts the number of elements in a list.
+- [`ft_lstlast`](ft_lstlast.c)	- returns the last element of the list.
+- [`ft_lstadd_back`](ft_lstadd_back.c)	- adds an element at the end of a list.
+- [`ft_lstclear`](ft_lstclear.c)	- deletes and free list.
+- [`ft_lstiter`](ft_lstiter.c)	- applies a function to each element of a list.
+- [`ft_lstmap`](ft_lstmap.c)	- applies a function to each element of a list.
